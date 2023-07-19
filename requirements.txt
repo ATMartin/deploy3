@@ -7,3 +7,4 @@ sqlparse==0.4.4
 virtualenv==20.23.1
 dj_rest_auth==4.0.1
 djangorestframework==3.14.0
+django-cors-headers==4.2.0
