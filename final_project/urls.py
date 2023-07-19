@@ -28,7 +28,6 @@ urlpatterns = [
     path("api_v1/", include("api.urls")),
     path("collection/", GetGameView.as_view(), name="GetGameView"),
     path("collection/<int:game_id>/", delete_game, name="delete_game"),
-    path('accounts/', include("allauth.urls")),
     path('auth/', include("accounts.urls")),
     # path("add-game/", add_game, name="add_game"),
 
