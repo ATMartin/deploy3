@@ -19,6 +19,7 @@ function App() {
     <BrowserRouter basename="/">
       <Routes>
         <Route element={<Layout />}>
+          
           <Route path="/" element={<Home />} />
           <Route
             path="/Collection"
