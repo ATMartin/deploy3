@@ -35,6 +35,7 @@ urlpatterns = [
     path("collection/delete/<int:game_id>/", delete_game, name="delete_game"),
     path('accounts/', include("allauth.urls")),
     path('auth/', include("accounts.urls")),
+    path('', include('frontend.urls')),
     # path("add-game/", add_game, name="add_game"),
 
 
