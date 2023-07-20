@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_b@t3q(k_ll)#zt)7sqqzi!1it_pi#3z2+xxy#fa#!6=b2o&n$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'dj_rest_auth',
     'dj_rest_auth.registration',
     'rest_framework',
@@ -63,19 +66,22 @@ MIDDLEWARE = [
 
 ]
 
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:5173','http://127.0.0.1:8000/']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/','http://127.0.0.1:8000/']
 
 CSRF_COOKIE_DOMAIN = '.localhost'
 
 CSRF_COOKIE_SAMESITE = 'Lax'
 
 ROOT_URLCONF = 'final_project.urls'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 TEMPLATES = [
     {
@@ -95,9 +101,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'final_project.wsgi.application'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 
 # Database
